@@ -1,9 +1,7 @@
-var GETH_HOSTNAME = "127.0.0.1";
-var GETH_RPCPORT = 8103;
+var GETH_HOSTNAME = "rpc.ldbc.io";
 
 var WL=window.location;
-var geth_command	= "geth --rpc --rpcaddr "+ GETH_HOSTNAME + " --rpcport " + GETH_RPCPORT +'\
- --rpcapi "web3,eth" ' + ' --rpccorsdomain "' + WL.protocol +"//" + WL.host + '"';
+var geth_command = 'geth --rpc --rpcapi "web3,eth" ' + ' --rpccorsdomain "' + WL.protocol + "//" + WL.host + '"';
 
 'use strict';
 
@@ -80,7 +78,7 @@ angular.module('ethExplorer', ['ngRoute','ui.bootstrap','filters','ngSanitize'])
         var Web3 = require('web3');
         web3 = new Web3()
 
-        web3.setProvider(new web3.providers.HttpProvider("http://"+GETH_HOSTNAME+":"+GETH_RPCPORT));
+        web3.setProvider(new web3.providers.HttpProvider("https://"+GETH_HOSTNAME));
 
         $rootScope.web3=web3;
 

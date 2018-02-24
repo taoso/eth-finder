@@ -4,17 +4,17 @@ angular.module('ethExplorer')
 
         // Display & update block list
         updateBlockList();
-        updateTXList();
-        updateStats();
+        //updateTXList();
+        //updateStats();
 
-        web3.eth.filter("latest", function(error, result){
-          if (!error) {
-            updateBlockList();
-            updateTXList();
-            updateStats();
-            $scope.$apply();
-          }
-        });
+        //web3.eth.filter("latest", function(error, result){
+        //  if (!error) {
+        //    updateBlockList();
+        //    updateTXList();
+        //    updateStats();
+        //    $scope.$apply();
+        //  }
+        //});
 
         $scope.processRequest= function(){
             var requestStr = $scope.ethRequest;
